@@ -7,17 +7,20 @@ const Graphs = () => {
 
 	return (
 		<div className="graphs-wrapper">
-			<div className="graph-section">
-				<div className="graph-title">Pie Chart</div>
-				<div className="graph-container"
-					dangerouslySetInnerHTML={{ __html: pieChartData }}
-				/>
-			</div>
-			<div className="graph-section">
-				<div className="graph-title">Main Chart</div>
-				<div className="graph-container"
-					dangerouslySetInnerHTML={{ __html: mainChartData }}
-				/>
+			<h2 className="future-forecast">Future Forecast</h2>
+			<div className="graphs-container">
+				<div className="graph-section">
+					<div className="graph-title">Analyst Ratings</div>
+					<div className="graph-container"
+						dangerouslySetInnerHTML={{ __html: pieChartData }}
+					/>
+				</div>
+				<div className="graph-section">
+					<div className="graph-title">Future Price Movement</div>
+					<div className="graph-container"
+						dangerouslySetInnerHTML={{ __html: mainChartData }}
+					/>
+				</div>
 			</div>
 		</div>
 	);
