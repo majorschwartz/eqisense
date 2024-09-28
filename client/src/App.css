@@ -32,6 +32,16 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
+#root {
+	display: flex;
+	justify-content: center;
+}
+
+.home-page, .main-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+}
 
 .home-page {
 	display: flex;
