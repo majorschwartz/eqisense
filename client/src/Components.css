@@ -20,6 +20,15 @@
     font-size: 1.75rem;
     font-weight: 600;
     margin-top: 1px;
+    margin-bottom: 0;
+}
+
+.stock-price-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0;
+    color: grey;
+    line-height: 1;
 }
 
 .header-right {
@@ -52,7 +61,7 @@
 
 .metrics-container {
     display: flex;
-    padding: 20px;
+    padding: 15px;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -62,7 +71,7 @@
 
 .metrics-left, .metrics-right {
     flex: 1;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .metrics-left {
@@ -90,8 +99,8 @@
 
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    gap: 13px;
 }
 
 .metrics-item {
@@ -106,6 +115,12 @@
 }
 
 .metrics-value {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
 }
