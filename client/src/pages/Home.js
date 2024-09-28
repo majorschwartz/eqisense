@@ -27,7 +27,7 @@ const Home = () => {
 		navigate(`/${tick.toUpperCase()}`);
 	};
 
-	const popularTickers = ["AAPL", "GOOG", "MSFT", "AMZN", "META", "TSLA", "NVDA", "ADBE", "NFLX"];
+	const popularTickers = ["AAPL", "GOOG", "MSFT", "AMZN", "META", "TSLA", "NVDA", "ADBE"];
 
 	return (
 		<div className="home-page">
