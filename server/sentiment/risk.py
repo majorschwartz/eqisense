@@ -21,7 +21,7 @@ def get_sentiment(news_title_list):
 	response = client.chat.completions.create(
 		model="gpt-4o-mini",
 		messages=[{"role": "user", "content": prompt}],
-		max_tokens=100,
+		max_tokens=200,
 		response_format={ "type": "json_object" }
 		)
 	
@@ -33,5 +33,3 @@ def get_sentiment(news_title_list):
 	reasoning = response_data.get("reasoning")
 	
 	return sentiment_score, reasoning
-
-print(get_sentiment(["Apple is a great company", "Apple is a terrible company"]))

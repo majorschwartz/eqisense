@@ -250,3 +250,32 @@
     }
 }
 
+.ratings {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.rating {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.rating-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.rating-dot.buy {
+    background-color: #008561;
+}
+
+.rating-dot.hold {
+    background-color: #BCBCBC;
+}
+
+.rating-dot.sell {
+    background-color: #D50000;
+}

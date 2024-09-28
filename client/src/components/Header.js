@@ -1,15 +1,12 @@
 import "Components.css";
-import React, { useState } from "react";
+import React from "react";
 
-const Header = () => {
-	const [stockName, setStockName] = useState("Apple Inc. (AAPL)");
-	const [stockPrice, setStockPrice] = useState("150.00");
-
+const Header = ({ data }) => {
 	return (
 		<div className="header-container">
 			<div className="header-left">
-				<div className="stock-name">{stockName}</div>
-				<div className="stock-price">{stockPrice}</div>
+				<div className="stock-name">{data.title}</div>
+				<div className="stock-price">{data.current_price}</div>
 				<div className="stock-price-label">Current Price</div>
 			</div>
 			<div className="header-right">
