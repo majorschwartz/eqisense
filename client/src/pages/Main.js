@@ -1,3 +1,5 @@
+import Header from "components/Header";
+import Metrics from "components/Metrics";
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getStockData } from "utils/api";
@@ -20,7 +22,8 @@ const Main = () => {
 
     return (
         <div>
-            <h1>Main</h1>
+            <Header />
+            <Metrics />
         </div>
     );
 }
