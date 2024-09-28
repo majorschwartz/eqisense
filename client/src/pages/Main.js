@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { getStockData } from "utils/api";
 
 const Main = () => {
     const { ticker } = useParams();
@@ -12,13 +13,14 @@ const Main = () => {
 
         if (!isValidTicker(ticker)) {
             navigate("/");
-        }
+        } else {
+			getStockData(ticker);
+		}
     }, [ticker, navigate]);
 
     return (
         <div>
             <h1>Main</h1>
-            <h2>{ticker}</h2>
         </div>
     );
 }
