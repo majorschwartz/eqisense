@@ -1,3 +1,4 @@
+import Graphs from "components/Graphs";
 import Header from "components/Header";
 import Metrics from "components/Metrics";
 import Risk from "components/Risk";
@@ -29,6 +30,7 @@ const Main = () => {
             <Header />
             <Metrics />
             <Risk analyst_score={analyst_score} in_the_week_score={in_the_week_score} in_the_week_desc={inTheWeekDesc} />
+            <Graphs />
         </div>
     );
 }

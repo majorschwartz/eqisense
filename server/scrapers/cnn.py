@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
+chrome_options.page_load_strategy = "eager"
 driver = webdriver.Chrome(options=chrome_options)
 
 def get_cnn_data(ticker):
@@ -23,7 +24,7 @@ def get_cnn_data(ticker):
 		pie_chart_data = None
 
 	try:
-		main_chart = WebDriverWait(driver, 10).until(
+		main_chart = WebDriverWait(driver, 3).until(
 			EC.presence_of_element_located((By.CSS_SELECTOR, ".chart.cnn-pcl-14hekau svg"))
 		)
 		main_chart_data = main_chart.get_attribute("outerHTML")
@@ -32,7 +33,7 @@ def get_cnn_data(ticker):
 
 	try:
 		# Wait for the list that contains the buy/hold/sell values
-		ul_element = WebDriverWait(driver, 10).until(
+		ul_element = WebDriverWait(driver, 3).until(
 			EC.presence_of_element_located((By.CSS_SELECTOR, "ul.markets-donut-chart__legend"))
 		)
 
@@ -50,4 +51,14 @@ def get_cnn_data(ticker):
 	except TimeoutException:
 		values = None
 
-	return pie_chart_data, main_chart_data, values
+	try:
+		revenue_element = WebDriverWait(driver, 3).until(
+			EC.presence_of_element_located((By.CSS_SELECTOR, ".market-financial-table__row-153LbB"))
+		)
+		total_revenue = revenue_element.find_element(By.CSS_SELECTOR, ".market-financial-table__text").text.strip()
+	except TimeoutException:
+		total_revenue = None
+
+	return pie_chart_data, main_chart_data, values, total_revenue
+
+print(get_cnn_data("TSLA"))

@@ -17,7 +17,7 @@ async def get_stock(ticker: str):
     print("Got CNN data")
     news_title_list = await run_in_threadpool(get_google_news, ticker=ticker)
     print("Got Google news")
-    sentiment = await run_in_threadpool(get_sentiment, news_title_list=news_title_list)
+    sentiment_score, reasoning = await run_in_threadpool(get_sentiment, news_title_list=news_title_list)
     print("Got sentiment")
     analyst_rating = await run_in_threadpool(get_analyst_rating, ticker=ticker)
     print("Got analyst rating")
@@ -32,5 +32,6 @@ async def get_stock(ticker: str):
         "pie_chart": pie_chart_data,
         "main_chart": main_chart_data,
         "values": values,
-        "sentiment": sentiment,
+        "sentiment_score": sentiment_score,
+        "sentiment_reasoning": reasoning,
         "analyst_rating": analyst_rating}, status_code=200)
