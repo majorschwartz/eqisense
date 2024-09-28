@@ -20,6 +20,15 @@
     font-size: 1.75rem;
     font-weight: 600;
     margin-top: 1px;
+    margin-bottom: 0;
+}
+
+.stock-price-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 0;
+    color: grey;
+    line-height: 1;
 }
 
 .header-right {
