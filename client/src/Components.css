@@ -182,3 +182,23 @@
         transform: translate(-50%, -50%) scale(1.5) rotate(360deg);
     }
 }
+
+.risk-desc {
+    margin-top: 20px;
+}
+
+.risk-desc-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.risk-desc-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.risk-desc-text a {
+    color: #000000;
+}
