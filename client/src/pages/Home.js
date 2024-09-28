@@ -24,16 +24,18 @@ const Home = () => {
 					value={ticker}
 					onChange={(e) => setTicker(e.target.value)}
 				/>
-				<div className="popular-tickers">
-					<span>Popular Tickers</span>
-					{popularTickers.map((ticker) => (
-						<div className="popular-ticker" key={ticker} onClick={() => handleSubmit(ticker)}>
-							{ticker}
-						</div>
-					))}
-				</div>
 				<div className="search-button">
 					<button onClick={() => handleSubmit(ticker)}>Search</button>
+				</div>
+				<div className="popular-tickers">
+					<span>Popular Tickers</span>
+					<div className="popular-ticker-grid">
+						{popularTickers.map((ticker) => (
+							<div className="popular-ticker" key={ticker} onClick={() => handleSubmit(ticker)}>
+								{ticker}
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
