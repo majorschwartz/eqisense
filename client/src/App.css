@@ -29,7 +29,7 @@ input[type="text"] {
 	width: 300px;
 	padding: 0.5rem;
 	font-size: 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 0; /* Remove bottom margin */
 }
 
 .popular-tickers {
@@ -55,10 +55,44 @@ input[type="text"] {
 	border-radius: 4px;
 }
 
-.search-button button {
-	margin-top: 1rem;
-	padding: 0.5rem 1rem;
+.search-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.input-wrapper {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+input[type="text"] {
+	font-family: monospace;
+	padding: 0.5rem;
 	font-size: 1rem;
+	margin-bottom: 0; /* Remove bottom margin */
+}
+
+.search-icon {
+	position: absolute;
+	right: 5px;
+	border: none;
+	background: none;
+	padding: 0;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.search-icon:hover svg path {
+	stroke: #007bff; /* Change color on hover */
+}
+
+/* Remove the old search button styles */
+.search-button {
+	display: none;
 }
 
