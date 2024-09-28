@@ -1,3 +1,4 @@
+import "Components.css";
 import React, { useState } from "react";
 
 const Metrics = () => {
@@ -7,9 +8,6 @@ const Metrics = () => {
 	const [beta, setBeta] = useState("1.25");
 	const [yearlyHigh, setYearlyHigh] = useState("$155.00");
 	const [yearlyLow, setYearlyLow] = useState("$120.00");
-
-
-
 
 	return (
 		<div>

@@ -1,13 +1,16 @@
+import "Components.css";
 import React, { useState } from "react";
 
 const Header = () => {
 	const [stockName, setStockName] = useState("Apple Inc. (AAPL)");
 	const [compDesc, setCompDesc] = useState("Apple Inc. is an American multinational technology company that designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories.");
+	const [stockPrice, setStockPrice] = useState("$150.00");
 
 	return (
-		<div className="">
+		<div className="header-container">
 			<div className="header-left">
 				<div className="stock-name">{stockName}</div>
+				<div className="stock-price">{stockPrice}</div>
 				<div className="stock-desc">{compDesc}</div>
 			</div>
 			<div className="header-right">

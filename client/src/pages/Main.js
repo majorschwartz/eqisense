@@ -21,7 +21,7 @@ const Main = () => {
     }, [ticker, navigate]);
 
     return (
-        <div>
+        <div className="main-container">
             <Header />
             <Metrics />
         </div>
