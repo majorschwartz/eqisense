@@ -11,25 +11,25 @@ const Metrics = () => {
 	const [yearlyLow, setYearlyLow] = useState("$120.00");
 
 	return (
-		<div>
-			<div className="metrics-container">
-				<div className="metrics metrics-left">
-					<div className="company-desc">
-						{compDesc}
-					</div>
-				</div>
-				<div className="metrics metrics-right">
+		<div className="metrics-container">
+			<div className="metrics-left">
+				<h3>Company Description</h3>
+				<p>{compDesc}</p>
+			</div>
+			<div className="metrics-right">
+				<h3>Key Stock Statistics</h3>
+				<div className="metrics-grid">
 					<div className="metrics-item">
 						<div className="metrics-label">Market Cap</div>
 						<div className="metrics-value">{marketCap}</div>
 					</div>
 					<div className="metrics-item">
-						<div className="metrics-label">Current Price</div>
-						<div className="metrics-value">{currPrice}</div>
+							<div className="metrics-label">Current Price</div>
+							<div className="metrics-value">{currPrice}</div>
 					</div>
 					<div className="metrics-item">
-						<div className="metrics-label">Earning Range</div>
-						<div className="metrics-value">{earningRange}</div>
+							<div className="metrics-label">Earning Range</div>
+							<div className="metrics-value">{earningRange}</div>
 					</div>
 					<div className="metrics-item">
 						<div className="metrics-label">Beta</div>
