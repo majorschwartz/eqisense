@@ -33,7 +33,7 @@ const Home = () => {
 		}
 	};
 
-	const popularTickers = ["AAPL", "GOOG", "MSFT", "AMZN", "META", "TSLA", "NVDA", "ADBE"];
+	const popularTickers = ["AAPL", "GOOG", "MSFT", "AMZN", "WMT", "TSLA", "NVDA", "ADBE"];
 
 	return (
 		<div className="home-page">

@@ -27,8 +27,7 @@ def get_analyst_rating(ticker):
 		match = re.search(r'has a Smart Score of (\d+|N/A)', text)
 		if match:
 			score = match.group(1)
-			return score if score != "N/A" else None
+			return score if score != "N/A" else "N/A"
 		else:
-			print("No match found")
-
-	return None
+			return "N/A"
+	return "N/A"

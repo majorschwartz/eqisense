@@ -1,7 +1,7 @@
 import "Components.css";
 import React from "react";
 
-const Header = ({ data }) => {
+const Header = ({ data, handleCaptureClick }) => {
 	return (
 		<div className="header-container">
 			<div className="header-left">
@@ -10,7 +10,7 @@ const Header = ({ data }) => {
 				<div className="stock-price-label">Current Price</div>
 			</div>
 			<div className="header-right">
-				<button className="header-download">
+				<button className="header-download" onClick={handleCaptureClick}>
 					<svg
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"

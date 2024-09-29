@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
+import time
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -22,6 +23,7 @@ def get_cnn_data(ticker):
 			lambda d: d.find_element(By.CSS_SELECTOR, ".markets-d3-donut") and
 			not all(path.get_attribute("fill") == "#BCBCBC" for path in d.find_elements(By.CSS_SELECTOR, ".markets-d3-donut path"))
 		)
+		time.sleep(3)
 		pie_chart = driver.find_element(By.CSS_SELECTOR, ".markets-d3-donut")
 		pie_chart_data = pie_chart.get_attribute("outerHTML")
 	except TimeoutException:

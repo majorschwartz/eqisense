@@ -25,32 +25,41 @@ const useStockData = (ticker) => {
     useEffect(() => {
         const retrieveStockData = async () => {
 			console.log("Retrieving stock data");
-			const response = await getStockData(ticker);
-			console.log("Stock data retrieved");
-			setData({
-				title: response.title,
-				company_desc: response.company_desc,
-				current_price: response.current_price,
-				earnings: response.earnings,
-				yearly_range: response.yearly_range,
-				beta: response.beta,
-				market_cap: response.market_cap,
-				pie_chart: response.pie_chart,
-				main_chart: response.main_chart,
-				values: response.values,
-				total_revenue: response.total_revenue,
-				sentiment_score: response.sentiment_score,
-				sentiment_reasoning: response.sentiment_reasoning,
-				analyst_rating: response.analyst_rating,
-			});
+			try {
+				const response = await getStockData(ticker);
 
-			setLoading(false);
+				console.log("Stock data retrieved");
+				setData({
+					title: response.title,
+					company_desc: response.company_desc,
+					current_price: response.current_price,
+					earnings: response.earnings,
+					yearly_range: response.yearly_range,
+					beta: response.beta,
+					market_cap: response.market_cap,
+					pie_chart: response.pie_chart,
+					main_chart: response.main_chart,
+					values: response.values,
+					total_revenue: response.total_revenue,
+					sentiment_score: response.sentiment_score,
+					sentiment_reasoning: response.sentiment_reasoning,
+					analyst_rating: response.analyst_rating,
+				});
+				
+				setLoading(false);
+			} catch (error) {
+				console.error(error);
+				setError("Stock not found.");
+				setLoading(false);
+				return;
+			}
+
 		}
 		try {
 			retrieveStockData();
 		} catch (error) {
 			console.error(error);
-			setError("Error retrieving stock data");
+			setError("Stock not found.");
 			setLoading(false);
 		}
     }, [ticker]);

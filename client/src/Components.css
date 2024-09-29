@@ -279,3 +279,48 @@
 .rating-dot.sell {
     background-color: #D50000;
 }
+
+.loading-container, .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loading-text {
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 100px;
+}
+
+.error-title {
+    font-size: 2.75rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.error-text, .try-again-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.try-again-button {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.try-again-button:hover {
+    background-color: #d0d0d0;
+}
