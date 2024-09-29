@@ -27,6 +27,12 @@ const Home = () => {
 		navigate(`/${tick.toUpperCase()}`);
 	};
 
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter') {
+			handleSubmit(ticker);
+		}
+	};
+
 	const popularTickers = ["AAPL", "GOOG", "MSFT", "AMZN", "META", "TSLA", "NVDA", "ADBE"];
 
 	return (
@@ -44,6 +50,7 @@ const Home = () => {
 							type="text"
 							value={ticker}
 							onChange={(e) => setTicker(e.target.value)}
+							onKeyDown={handleKeyDown}
 							maxLength="5"
 						/>
 						<button className="search-icon" onClick={() => handleSubmit(ticker)}>
@@ -52,14 +59,14 @@ const Home = () => {
 					</div>
 				</div>
 				<div className="popular-tickers">
-					<span>Popular Tickers</span>
-					<div className="popular-ticker-grid">
-						{popularTickers.map((ticker) => (
-							<div className="popular-ticker" key={ticker} onClick={() => handleSubmit(ticker)}>
-								{ticker}
-							</div>
-						))}
-					</div>
+						<span>Popular Tickers</span>
+						<div className="popular-ticker-grid">
+							{popularTickers.map((ticker) => (
+								<div className="popular-ticker" key={ticker} onClick={() => handleSubmit(ticker)}>
+									{ticker}
+								</div>
+							))}
+						</div>
 				</div>
 			</div>
 		</div>
