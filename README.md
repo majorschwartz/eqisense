@@ -1,4 +1,7 @@
-### Eqisense
+# Eqisense
+
+### Tech Stack
+React, FastAPI, OpenAI's API, Selenium
 
 ## Inspiration
 We wanted to create an app that removes the barriers from making good, sensible financial decisions in regards to investing in single equities. Equisense serves as a solution into making this research accessible by simplifying the user experience by researching company financials and understanding their risks removing the bloat from traditional financial websites to come to a conclusion whether to buy, hold, or sell a particular stock. We also wanted the app to allow the user to share their findings to other people with ease.
@@ -20,4 +23,5 @@ Much of this answer is shown above, but more specifically, one of us gained a lo
 
 ## What's next for Eqisense
 Expanding the scope of our searches to include bonds and mutual funds to enable people to choose whether to invest from a top-down or a bottom-up perspective.
+
 
